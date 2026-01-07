@@ -1,5 +1,7 @@
 :root {
     --primary-color: rgb(112, 131, 214);
+    --font-size-headings: 16px;
+    --font-size-para: 12px;
 }
 
 * {
@@ -33,13 +35,6 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
-}
-
-#widgetBar {
-    display: grid;
-    grid-column: 2;
-    grid-template-rows: 5fr 4fr;
-    background-color: green;
 }
 
 #announcements {
@@ -106,7 +101,6 @@ ul {
 }
 
 #projects {
-    display: grid;
     gap: 16px;
     padding: 16px;
 }
@@ -134,7 +128,7 @@ ul {
 }
 
 .projectText > * {
-    font-size: 12px;
+    font-size: var(--font-size-para)
 }
 
 .projectText p {
@@ -142,7 +136,7 @@ ul {
 }
 
 .projectText h2 {
-    font-size: 16px;
+    font-size: var(--font-size-headings)
 }
 
 .projectIcons {
@@ -203,3 +197,47 @@ ul {
     cursor: pointer;
 }
 
+#widgetBar {
+    display: grid;
+    grid-column: 2;
+    grid-template-rows: 1fr 7fr 5fr 1fr;
+    gap: 16px;
+    padding: 16px;
+}
+
+.announcement h1 {
+    font-size: var(--font-size-headings);
+}
+
+
+
+#widgetBar p {
+    font-size: var(--font-size-para);
+}
+
+#announcements, #trending {
+    border-radius: 16px;
+}
+
+#announcements {
+    gap: 16px;
+    padding: 16px;
+    display: grid;
+    grid-row: 2;
+    background-color: white;
+}
+
+#trending {
+    display: grid;
+    grid-row: 3;
+    background-color: white;
+}
+
+.bordertop {
+    border-top: 1px solid gray;
+    padding-top: 8px;
+}
+
+#mainh1 {
+    font-size: 32px;
+}
