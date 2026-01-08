@@ -1,7 +1,13 @@
+:root {
+    --primary-color: rgb(112, 131, 214);
+}
+
 * {
     padding: 0;
     margin: 0;
     font-family: "Roboto";
+    overflow: hidden;
+
 }
 
 #container {
@@ -10,11 +16,10 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
-    overflow: hidden;
 }
 
 #left {
-    background-color: rgb(112, 131, 214);
+    background-color: var(--primary-color);
     grid-column: 1 / 2;
     grid-row: 1 / 5;
     display: grid;
@@ -22,16 +27,12 @@
     color: white;
 }
 
-#right {
-    background-color: white;
-    grid-column: 2 / 5;
-    grid-row: 1 / 2;
-}
 
 #mainContent {
     background-color: lightgray;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 #widgetBar {
@@ -97,6 +98,108 @@ ul {
     margin-top: auto;
 }
 
+#projectsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 12fr 1fr;
+    gap: 16px;
+}
+
+#projects {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+}
+
 .project {
     border-radius: 10px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 32fr;
+    grid-template-rows: 1fr 6fr 2fr;
 }
+
+.projectLine {
+    display: grid;
+    background-color: orange;
+    grid-column: 1;
+    grid-row: 1 / 4;
+}
+
+.projectText {
+    display: grid;
+    grid-column: 2 / 2;
+    grid-row-start: 2;
+    padding: 8px;
+}
+
+.projectText > * {
+    font-size: 12px;
+}
+
+.projectText p {
+    color: gray;
+}
+
+.projectText h2 {
+    font-size: 16px;
+}
+
+.projectIcons {
+    display: flex;
+    justify-content: flex-end;
+    grid-row-start: 3;
+}
+
+.projectIcons svg {
+    padding: 16px;
+    width: min(24px);
+    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(17%) hue-rotate(67deg) brightness(91%) contrast(101%);
+}
+
+#projects {
+    display: grid;
+    grid-column: 1 / 5;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+#search {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+#right {
+    background-color: white;
+    grid-column: 2 / 5;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#rightProfile {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+#rightButtons {
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rightButtons button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    margin: 0 16px;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
